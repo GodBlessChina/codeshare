@@ -16416,15 +16416,18 @@ Name: Age, dtype: int64
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[196]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 读取excel文件中指定的sheet</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;passengers.xlsx&#39;</span><span class="p">,</span><span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16432,20 +16435,1010 @@ Name: Age, dtype: int64
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>                       Name   Age     Sex
+0   Braund, Mr. Owen Harris  22.0    male
+1  Allen, Mr. William Henry  35.0    male
+2  Bonnell, Miss. Elizabeth   NaN  female
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[198]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3 entries, 0 to 2
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   Name    3 non-null      object 
+ 1   Age     2 non-null      float64
+ 2   Sex     3 non-null      object 
+dtypes: float64(1), object(2)
+memory usage: 200.0+ bytes
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[203]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[203]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(3, 3)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[225]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pandas 处理时间（年月日)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;22/3/2022&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span> <span class="c1"># freq:Year Month Day Hour </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">times</span><span class="p">))</span> <span class="c1"># DatetimeIndex</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>DatetimeIndex([&#39;2022-03-22 00:00:00&#39;, &#39;2022-03-22 01:00:00&#39;,
+               &#39;2022-03-22 02:00:00&#39;, &#39;2022-03-22 03:00:00&#39;,
+               &#39;2022-03-22 04:00:00&#39;, &#39;2022-03-22 05:00:00&#39;,
+               &#39;2022-03-22 06:00:00&#39;, &#39;2022-03-22 07:00:00&#39;,
+               &#39;2022-03-22 08:00:00&#39;, &#39;2022-03-22 09:00:00&#39;,
+               &#39;2022-03-22 10:00:00&#39;, &#39;2022-03-22 11:00:00&#39;,
+               &#39;2022-03-22 12:00:00&#39;, &#39;2022-03-22 13:00:00&#39;,
+               &#39;2022-03-22 14:00:00&#39;, &#39;2022-03-22 15:00:00&#39;,
+               &#39;2022-03-22 16:00:00&#39;, &#39;2022-03-22 17:00:00&#39;,
+               &#39;2022-03-22 18:00:00&#39;, &#39;2022-03-22 19:00:00&#39;,
+               &#39;2022-03-22 20:00:00&#39;, &#39;2022-03-22 21:00:00&#39;,
+               &#39;2022-03-22 22:00:00&#39;, &#39;2022-03-22 23:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;H&#39;)
+&lt;class &#39;pandas.core.indexes.datetimes.DatetimeIndex&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[230]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ymd&quot;</span><span class="p">:</span><span class="n">times</span><span class="p">}</span> <span class="c1"># dict字典类型</span>
+<span class="c1"># 把dict类型转换成pandas的DataFrame类型</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>                   ymd
+0  2022-03-22 00:00:00
+1  2022-03-22 01:00:00
+2  2022-03-22 02:00:00
+3  2022-03-22 03:00:00
+4  2022-03-22 04:00:00
+5  2022-03-22 05:00:00
+6  2022-03-22 06:00:00
+7  2022-03-22 07:00:00
+8  2022-03-22 08:00:00
+9  2022-03-22 09:00:00
+10 2022-03-22 10:00:00
+11 2022-03-22 11:00:00
+12 2022-03-22 12:00:00
+13 2022-03-22 13:00:00
+14 2022-03-22 14:00:00
+15 2022-03-22 15:00:00
+16 2022-03-22 16:00:00
+17 2022-03-22 17:00:00
+18 2022-03-22 18:00:00
+19 2022-03-22 19:00:00
+20 2022-03-22 20:00:00
+21 2022-03-22 21:00:00
+22 2022-03-22 22:00:00
+23 2022-03-22 23:00:00
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[234]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="c1"># 最大的时间</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[234]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Timestamp(&#39;2022-03-22 23:00:00&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[237]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[237]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Timestamp(&#39;2022-03-22 00:00:00&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[245]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 获取df ymd中的某个值</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">][</span><span class="mi">22</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>  <span class="c1"># Timestamp对象</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;年:&#39;</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;月:&#39;</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;时：&#39;</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
+<span class="c1"># 天 分 秒</span>
+<span class="c1"># day minute second</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2022-03-22 22:00:00
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt;
+--------------
+年: 2022
+月: 3
+时： 22
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[248]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 求时间差</span>
+<span class="n">tlen</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">][</span><span class="mi">19</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tlen</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0 days 16:00:00
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[262]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 将字符串转换成pandas时间格式:Timestamp</span>
+<span class="n">strtime</span> <span class="o">=</span> <span class="s1">&#39;2000 1 20 11:25:36&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">strtime</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">year</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">month</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">day</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">second</span><span class="p">)</span> <span class="c1"># 取出年月日时分秒</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2000-01-20 11:25:36
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt;
+2000 1 20 11 25 36
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[264]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 求两个时间的差值</span>
+<span class="n">strtime</span> <span class="o">=</span> <span class="s1">&#39;2000 1 20 11:25:36&#39;</span>
+<span class="n">strtime2</span> <span class="o">=</span> <span class="s1">&#39;2022 3 22 11:16:30&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">strtime</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">strtime2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>8096 days 23:50:54
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[269]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 将时间数据写入excel文件</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;22/3/2022&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ymd&quot;</span><span class="p">:</span><span class="n">times</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># 将df写入excel文件</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>                   ymd
+0  2022-03-22 00:00:00
+1  2022-03-22 01:00:00
+2  2022-03-22 02:00:00
+3  2022-03-22 03:00:00
+4  2022-03-22 04:00:00
+5  2022-03-22 05:00:00
+6  2022-03-22 06:00:00
+7  2022-03-22 07:00:00
+8  2022-03-22 08:00:00
+9  2022-03-22 09:00:00
+10 2022-03-22 10:00:00
+11 2022-03-22 11:00:00
+12 2022-03-22 12:00:00
+13 2022-03-22 13:00:00
+14 2022-03-22 14:00:00
+15 2022-03-22 15:00:00
+16 2022-03-22 16:00:00
+17 2022-03-22 17:00:00
+18 2022-03-22 18:00:00
+19 2022-03-22 19:00:00
+20 2022-03-22 20:00:00
+21 2022-03-22 21:00:00
+22 2022-03-22 22:00:00
+23 2022-03-22 23:00:00
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[270]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;shijian.xlsx&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finished&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>finished
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[278]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 读取excel中的时间</span>
+<span class="n">newdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;shijian.xlsx&#39;</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ymd&#39;</span><span class="p">:</span><span class="s2">&quot;object&quot;</span><span class="p">})</span> <span class="c1"># 制定ymd这一列的数据类型为object</span>
+<span class="n">ymd</span> <span class="o">=</span> <span class="n">newdf</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ymd</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">year</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">month</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">day</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>  <span class="c1"># 每一行都是一个Timestamp 类型</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 00:00:00 2022 3 22 0
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 01:00:00 2022 3 22 1
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 02:00:00 2022 3 22 2
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 03:00:00 2022 3 22 3
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 04:00:00 2022 3 22 4
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 05:00:00 2022 3 22 5
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 06:00:00 2022 3 22 6
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 07:00:00 2022 3 22 7
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 08:00:00 2022 3 22 8
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 09:00:00 2022 3 22 9
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 10:00:00 2022 3 22 10
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 11:00:00 2022 3 22 11
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 12:00:00 2022 3 22 12
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 13:00:00 2022 3 22 13
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 14:00:00 2022 3 22 14
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 15:00:00 2022 3 22 15
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 16:00:00 2022 3 22 16
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 17:00:00 2022 3 22 17
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 18:00:00 2022 3 22 18
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 19:00:00 2022 3 22 19
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 20:00:00 2022 3 22 20
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 21:00:00 2022 3 22 21
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 22:00:00 2022 3 22 22
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022-03-22 23:00:00 2022 3 22 23
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[286]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+<span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="s2">&quot;Braund, Mr. Owen Harris&quot;</span><span class="p">,</span> <span class="s2">&quot;Allen, Mr. William Henry&quot;</span><span class="p">,</span> <span class="s2">&quot;Bonnell, Miss. Elizabeth&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+<span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">58</span><span class="p">],</span>
+<span class="s2">&quot;Sex&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>  
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[286]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>22</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Allen, Mr. William Henry</td>
+      <td>35</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bonnell, Miss. Elizabeth</td>
+      <td>58</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[298]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 补充： 取出年龄等于35岁的数据   javascript:===. java/c#</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">35</span><span class="p">]</span>  <span class="c1"># DataFrame[Series]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[298]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Allen, Mr. William Henry</td>
+      <td>35</td>
+      <td>male</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[300]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 年龄大于30的数据</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[300]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Allen, Mr. William Henry</td>
+      <td>35</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bonnell, Miss. Elizabeth</td>
+      <td>58</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[307]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 取出Sex=male的数据</span>
+<span class="c1">#df[df[&#39;Sex&#39;]==&#39;male&#39;] </span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;male&#39;</span><span class="p">])]</span> 
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span><span class="mi">35</span><span class="p">])]</span> 
+
+<span class="c1"># TODO: 作业 用==号取出年龄是22或者35的 数据</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[307]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>22</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Allen, Mr. William Henry</td>
+      <td>35</td>
+      <td>male</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
