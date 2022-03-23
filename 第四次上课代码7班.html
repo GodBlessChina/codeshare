@@ -18248,6 +18248,743 @@ memory usage: 248.0+ bytes
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[244]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pandas处理时间</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;23/3/2022&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>DatetimeIndex([&#39;2022-03-23 00:00:00&#39;, &#39;2022-03-23 01:00:00&#39;,
+               &#39;2022-03-23 02:00:00&#39;, &#39;2022-03-23 03:00:00&#39;,
+               &#39;2022-03-23 04:00:00&#39;, &#39;2022-03-23 05:00:00&#39;,
+               &#39;2022-03-23 06:00:00&#39;, &#39;2022-03-23 07:00:00&#39;,
+               &#39;2022-03-23 08:00:00&#39;, &#39;2022-03-23 09:00:00&#39;,
+               &#39;2022-03-23 10:00:00&#39;, &#39;2022-03-23 11:00:00&#39;,
+               &#39;2022-03-23 12:00:00&#39;, &#39;2022-03-23 13:00:00&#39;,
+               &#39;2022-03-23 14:00:00&#39;, &#39;2022-03-23 15:00:00&#39;,
+               &#39;2022-03-23 16:00:00&#39;, &#39;2022-03-23 17:00:00&#39;,
+               &#39;2022-03-23 18:00:00&#39;, &#39;2022-03-23 19:00:00&#39;,
+               &#39;2022-03-23 20:00:00&#39;, &#39;2022-03-23 21:00:00&#39;,
+               &#39;2022-03-23 22:00:00&#39;, &#39;2022-03-23 23:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;H&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[247]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ymd&#39;</span><span class="p">:</span><span class="n">times</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[247]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ymd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-03-23 00:00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-03-23 01:00:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-03-23 02:00:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022-03-23 03:00:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2022-03-23 04:00:00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2022-03-23 05:00:00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2022-03-23 06:00:00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2022-03-23 07:00:00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2022-03-23 08:00:00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2022-03-23 09:00:00</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2022-03-23 10:00:00</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2022-03-23 11:00:00</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2022-03-23 12:00:00</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2022-03-23 13:00:00</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2022-03-23 14:00:00</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2022-03-23 15:00:00</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2022-03-23 16:00:00</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2022-03-23 17:00:00</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2022-03-23 18:00:00</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2022-03-23 19:00:00</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2022-03-23 20:00:00</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2022-03-23 21:00:00</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2022-03-23 22:00:00</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2022-03-23 23:00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[249]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[249]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0    2022-03-23 00:00:00
+1    2022-03-23 01:00:00
+2    2022-03-23 02:00:00
+3    2022-03-23 03:00:00
+4    2022-03-23 04:00:00
+5    2022-03-23 05:00:00
+6    2022-03-23 06:00:00
+7    2022-03-23 07:00:00
+8    2022-03-23 08:00:00
+9    2022-03-23 09:00:00
+10   2022-03-23 10:00:00
+11   2022-03-23 11:00:00
+12   2022-03-23 12:00:00
+13   2022-03-23 13:00:00
+14   2022-03-23 14:00:00
+15   2022-03-23 15:00:00
+16   2022-03-23 16:00:00
+17   2022-03-23 17:00:00
+18   2022-03-23 18:00:00
+19   2022-03-23 19:00:00
+20   2022-03-23 20:00:00
+21   2022-03-23 21:00:00
+22   2022-03-23 22:00:00
+23   2022-03-23 23:00:00
+Name: ymd, dtype: datetime64[ns]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[253]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1">#df[&#39;ymd&#39;].min()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[253]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Timestamp(&#39;2022-03-23 23:00:00&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[261]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tst</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">][</span><span class="mi">23</span><span class="p">]</span>  <span class="c1"># Timestamp</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="c1"># 年</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">month</span><span class="p">)</span> <span class="c1"># 月</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="c1"># 日</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> <span class="c1"># 时</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span> <span class="c1"># 分</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tst</span><span class="o">.</span><span class="n">second</span><span class="p">)</span> <span class="c1"># 秒</span>
+
+<span class="c1"># DataFram --&gt; Series --&gt; TImestamp时间戳</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2022
+3
+23
+23
+0
+0
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[265]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Timestamp时间戳类型</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2000 1 15 10:25:35&#39;</span><span class="p">)</span> <span class="c1"># 这个API得到一个Timestamp类型</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2000-01-15 10:25:35
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[267]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2022 3 23 11:12:39&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2022-03-23 11:12:39
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[269]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[269]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Timedelta(&#39;8103 days 00:47:04&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[273]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 将时间写入excel文件中,不要row的索引</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;23/3/2022&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ymd&#39;</span><span class="p">:</span><span class="n">times</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># 写入 time.xlsx</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;time.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;finish...&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>finish...
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[279]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 从excel中读取时间</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;time.xlsx&#39;</span><span class="p">)</span>
+<span class="n">ymds</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ymd&#39;</span><span class="p">]</span>
+<span class="c1"># 迭代Series类型</span>
+<span class="k">for</span> <span class="n">ymd</span> <span class="ow">in</span> <span class="n">ymds</span><span class="p">:</span>  <span class="c1"># ymd是一个timestamp时间戳类型</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ymd</span><span class="p">),</span><span class="n">ymd</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">ymd</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 0
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 1
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 2
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 3
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 4
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 5
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 6
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 7
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 8
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 9
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 10
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 11
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 12
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 13
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 14
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 15
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 16
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 17
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 18
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 19
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 20
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 21
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 22
+&lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt; 2022 23
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[282]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># c交换两个数的值</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">#include&lt;stdio.h&gt;</span>
+<span class="sd">  </span>
+<span class="sd">void swap(int i,int j)</span>
+<span class="sd">{</span>
+<span class="sd">        i = i ^ j;</span>
+<span class="sd">        j = i ^ j;</span>
+<span class="sd">        i = i ^ j;</span>
+<span class="sd">}</span>
+
+<span class="sd">int main(int argc,char** argv)</span>
+<span class="sd">{</span>
+<span class="sd">        int i = 1;</span>
+<span class="sd">        int j = 2;</span>
+<span class="sd">        // 交换两个数的值</span>
+<span class="sd">        swap(i,j);</span>
+<span class="sd">        printf(&quot;i=%d\tj=%d\n&quot;, i,j);</span>
+<span class="sd">}</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[282]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;\n#include&lt;stdio.h&gt;\n  \nvoid swap(int i,int j)\n{\n        i = i ^ j;\n        j = i ^ j;\n        i = i ^ j;\n}\n\nint main(int argc,char** argv)\n{\n        int i = 1;\n        int j = 2;\n        // 交换两个数的值\n        swap(i,j);\n        printf(&#34;i=%d\tj=%d\n&#34;, i,j);\n}\n&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[283]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">#include&lt;stdio.h&gt;</span>
+<span class="sd">  </span>
+<span class="sd">///// 这里传的不是值，是两个指针变量</span>
+<span class="sd">void swap(int* i,int* j)</span>
+<span class="sd">{</span>
+<span class="sd">        *i = *i ^ *j;</span>
+<span class="sd">        *j = *i ^ *j;</span>
+<span class="sd">        *i = *i ^ *j;</span>
+<span class="sd">}</span>
+
+<span class="sd">int main(int argc,char** argv)</span>
+<span class="sd">{</span>
+<span class="sd">        int i = 1;</span>
+<span class="sd">        int j = 2;</span>
+<span class="sd">        // 交换两个数的值，这里传的是两个变量的地址</span>
+<span class="sd">        swap(&amp;i,&amp;j);</span>
+<span class="sd">        printf(&quot;i=%d\tj=%d\n&quot;, i,j);</span>
+<span class="sd">}</span>
+<span class="sd">  </span>
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[283]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;\n\n#include&lt;stdio.h&gt;\n  \n///// 这里传的不是值，是两个指针变量\nvoid swap(int* i,int* j)\n{\n        *i = *i ^ *j;\n        *j = *i ^ *j;\n        *i = *i ^ *j;\n}\n\nint main(int argc,char** argv)\n{\n        int i = 1;\n        int j = 2;\n        // 交换两个数的值，这里传的是两个变量的地址\n        swap(&amp;i,&amp;j);\n        printf(&#34;i=%d\tj=%d\n&#34;, i,j);\n}\n  \n\n\n&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18256,7 +18993,11 @@ memory usage: 248.0+ bytes
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Pig</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">pei_qi</span> <span class="o">=</span> <span class="n">Pig</span><span class="p">()</span>  <span class="c1"># pei_qi ba_jie 不是对象。但是实际编程的时候，我们把它们叫做对象， 它们只是对象的引用。Pig()才是真正的对象。</span>
+<span class="n">ba_jie</span> <span class="o">=</span> <span class="n">Pig</span><span class="p">()</span> <span class="c1"># () 是调用的意思，在java中 new Pig() 括号是调用 方法区里的一段数据，这个数据是一个模版，是Pig类的代码模板</span>
 </pre></div>
 
      </div>
