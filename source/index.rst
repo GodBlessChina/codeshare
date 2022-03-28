@@ -24,6 +24,9 @@ Python数据分析
 `第二次课内容 <https://godblesschina.github.io/codeshare/第二次课内容.html>`_
 
 
+`第六次课爬取动态网站2 <https://godblesschina.github.io/codeshare/第六次课爬取动态网站2.html>`_
+
+
 `第二次上课代码7班 <https://godblesschina.github.io/codeshare/第二次上课代码7班.html>`_
 
 
