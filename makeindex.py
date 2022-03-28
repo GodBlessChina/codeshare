@@ -28,7 +28,7 @@ for line in hrefs:
     
 findexrstbac.close()
 findexrst.close()
-# open('source/index.rst','w').write(content)
+open('source/index.rst','w').write(content)
 
 print('开始编译')
 os.system("make html")
