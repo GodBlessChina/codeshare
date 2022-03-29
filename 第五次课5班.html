@@ -17950,13 +17950,15 @@ File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Pyth
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[145]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[156]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 将 df1 df2 join</span>
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:[</span><span class="s2">&quot;A1&quot;</span><span class="p">,</span><span class="s2">&quot;A2&quot;</span><span class="p">]})</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;B&quot;</span><span class="p">:[</span><span class="s2">&quot;B1&quot;</span><span class="p">,</span><span class="s2">&quot;B2&quot;</span><span class="p">]})</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>  <span class="c1"># TODO 这里不是 pd.join(df1,df2)</span>
+<span class="c1"># pd.join(df1,df2) # join()函数不是pandas里的 ，是DataFrame里的</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>  <span class="c1"># 相同的列，join报错</span>
+<span class="c1"># pd.concat((df1,df2))</span>
 </pre></div>
 
      </div>
@@ -17974,7 +17976,7 @@ File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Pyth
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[145]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[156]:</div>
 
 
 
@@ -18023,128 +18025,6 @@ File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Pyth
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[146]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:[</span><span class="s2">&quot;A1&quot;</span><span class="p">,</span><span class="s2">&quot;A2&quot;</span><span class="p">]})</span>
-<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:[</span><span class="s2">&quot;B1&quot;</span><span class="p">,</span><span class="s2">&quot;B2&quot;</span><span class="p">]})</span> <span class="c1"># 列名相同，报错</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
-Input <span class="ansi-green-intense-fg ansi-bold">In [146]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      1</span> df1 <span style="color: rgb(98,98,98)">=</span> pd<span style="color: rgb(98,98,98)">.</span>DataFrame({<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A</span><span style="color: rgb(175,0,0)">&#34;</span>:[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A1</span><span style="color: rgb(175,0,0)">&#34;</span>,<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A2</span><span style="color: rgb(175,0,0)">&#34;</span>]})
-<span class="ansi-green-fg">      2</span> df2 <span style="color: rgb(98,98,98)">=</span> pd<span style="color: rgb(98,98,98)">.</span>DataFrame({<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A</span><span style="color: rgb(175,0,0)">&#34;</span>:[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">B1</span><span style="color: rgb(175,0,0)">&#34;</span>,<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">B2</span><span style="color: rgb(175,0,0)">&#34;</span>]})
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span> <span class="ansi-yellow-bg">df1</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">join</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">df2</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\frame.py:9248</span>, in <span class="ansi-cyan-fg">DataFrame.join</span><span class="ansi-blue-intense-fg ansi-bold">(self, other, on, how, lsuffix, rsuffix, sort)</span>
-<span class="ansi-green-fg">   9094</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">join</span>(
-<span class="ansi-green-fg">   9095</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-fg">   9096</span>     other: DataFrame <span style="color: rgb(98,98,98)">|</span> Series,
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">   9101</span>     sort: <span style="color: rgb(0,135,0)">bool</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-fg">   9102</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> DataFrame:
-<span class="ansi-green-fg">   9103</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">   9104</span> <span style="color: rgb(175,0,0)">    Join columns of another DataFrame.</span>
-<span class="ansi-green-fg">   9105</span> 
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">   9246</span> <span style="color: rgb(175,0,0)">    5  K1  A5   B1</span>
-<span class="ansi-green-fg">   9247</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 9248</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_join_compat</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg">   9249</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">other</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">on</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">how</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">how</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">lsuffix</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">lsuffix</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">rsuffix</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">rsuffix</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">sort</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">sort</span>
-<span class="ansi-green-fg">   9250</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\frame.py:9279</span>, in <span class="ansi-cyan-fg">DataFrame._join_compat</span><span class="ansi-blue-intense-fg ansi-bold">(self, other, on, how, lsuffix, rsuffix, sort)</span>
-<span class="ansi-green-fg">   9270</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> how <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">cross</span><span style="color: rgb(175,0,0)">&#34;</span>:
-<span class="ansi-green-fg">   9271</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> merge(
-<span class="ansi-green-fg">   9272</span>             <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-fg">   9273</span>             other,
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">   9277</span>             sort<span style="color: rgb(98,98,98)">=</span>sort,
-<span class="ansi-green-fg">   9278</span>         )
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 9279</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">merge</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg">   9280</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9281</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">other</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9282</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">left_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">on</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9283</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">how</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">how</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9284</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">left_index</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">on</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,0,255)">is</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">None</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9285</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">right_index</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9286</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">suffixes</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">lsuffix</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">rsuffix</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9287</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">sort</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">sort</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   9288</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">   9289</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg">   9290</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> on <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-
-File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\reshape\merge.py:122</span>, in <span class="ansi-cyan-fg">merge</span><span class="ansi-blue-intense-fg ansi-bold">(left, right, how, on, left_on, right_on, left_index, right_index, sort, suffixes, copy, indicator, validate)</span>
-<span class="ansi-green-fg">     90</span> <span style="color: rgb(175,0,255)">@Substitution</span>(<span style="color: rgb(175,0,0)">&#34;</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">left : DataFrame or named Series</span><span style="color: rgb(175,0,0)">&#34;</span>)
-<span class="ansi-green-fg">     91</span> <span style="color: rgb(175,0,255)">@Appender</span>(_merge_doc, indents<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0</span>)
-<span class="ansi-green-fg">     92</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">merge</span>(
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">    105</span>     validate: <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-fg">    106</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> DataFrame:
-<span class="ansi-green-fg">    107</span>     op <span style="color: rgb(98,98,98)">=</span> _MergeOperation(
-<span class="ansi-green-fg">    108</span>         left,
-<span class="ansi-green-fg">    109</span>         right,
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">    120</span>         validate<span style="color: rgb(98,98,98)">=</span>validate,
-<span class="ansi-green-fg">    121</span>     )
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 122</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_result</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\reshape\merge.py:718</span>, in <span class="ansi-cyan-fg">_MergeOperation.get_result</span><span class="ansi-blue-intense-fg ansi-bold">(self)</span>
-<span class="ansi-green-fg">    714</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>left, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>right <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_indicator_pre_merge(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>left, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>right)
-<span class="ansi-green-fg">    716</span> join_index, left_indexer, right_indexer <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_get_join_info()
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 718</span> llabels, rlabels <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_items_overlap_with_suffix</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg">    719</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">left</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_info_axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">right</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_info_axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">suffixes</span>
-<span class="ansi-green-fg">    720</span> <span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">    722</span> lindexers <span style="color: rgb(98,98,98)">=</span> {<span style="color: rgb(98,98,98)">1</span>: left_indexer} <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> left_indexer <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> {}
-<span class="ansi-green-fg">    723</span> rindexers <span style="color: rgb(98,98,98)">=</span> {<span style="color: rgb(98,98,98)">1</span>: right_indexer} <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> right_indexer <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> {}
-
-File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\reshape\merge.py:2313</span>, in <span class="ansi-cyan-fg">_items_overlap_with_suffix</span><span class="ansi-blue-intense-fg ansi-bold">(left, right, suffixes)</span>
-<span class="ansi-green-fg">   2310</span> lsuffix, rsuffix <span style="color: rgb(98,98,98)">=</span> suffixes
-<span class="ansi-green-fg">   2312</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> lsuffix <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> rsuffix:
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 2313</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">columns overlap but no suffix specified: </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>to_rename<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#34;</span>)
-<span class="ansi-green-fg">   2315</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">renamer</span>(x, suffix):
-<span class="ansi-green-fg">   2316</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">   2317</span> <span style="color: rgb(175,0,0)">    Rename the left and right indices.</span>
-<span class="ansi-green-fg">   2318</span> 
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">   2329</span> <span style="color: rgb(175,0,0)">    x : renamed column name</span>
-<span class="ansi-green-fg">   2330</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ValueError</span>: columns overlap but no suffix specified: Index([&#39;A&#39;], dtype=&#39;object&#39;)</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18153,7 +18033,19 @@ File <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Pyth
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="n">作业</span><span class="err">：</span>
+	<span class="mi">1</span> <span class="n">用pandas读取</span> <span class="n">s1</span> <span class="n">s2</span> <span class="n">这两个sheet页的数据</span><span class="err">，</span><span class="n">生成两个DataFrame对象</span> <span class="n">df1</span> <span class="n">df2</span>
+	<span class="mi">2</span> <span class="n">把df1</span> <span class="n">df2</span> <span class="n">连接到一起</span> <span class="n">merge</span> <span class="n">concat</span> <span class="n">join</span> <span class="p">,</span><span class="n">效果如下</span>
+
+<span class="n">效果</span>
+<span class="mi">200401176</span>	<span class="n">王子文</span>	<span class="n">软件技术</span>	<span class="mi">20</span><span class="n">软件5班</span>  <span class="mi">100</span>  
+<span class="mi">200401177</span>	<span class="n">杨鑫</span>	<span class="n">软件技术</span>	<span class="mi">20</span><span class="n">软件5班</span>   <span class="mi">0</span>    <span class="n">缺考</span>
+<span class="mi">200401178</span>	<span class="n">张正昊</span>	<span class="n">软件技术</span>	<span class="mi">20</span><span class="n">软件5班</span>
+
+	<span class="mi">3</span> <span class="n">求成绩的平均值</span> <span class="n">最大值</span> <span class="n">最小值</span> <span class="n">标准差</span>  <span class="n">mean</span> <span class="nb">max</span> <span class="nb">min</span> <span class="n">std</span>
+
+	<span class="mi">4</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pandas</span><span class="o">.</span><span class="n">pydata</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">getting_started</span><span class="o">/</span><span class="n">intro_tutorials</span><span class="o">/</span><span class="mi">01</span><span class="n">_table_oriented</span><span class="o">.</span><span class="n">html</span>
+		<span class="n">任选一段话</span><span class="err">，</span><span class="n">翻译一下</span>
 </pre></div>
 
      </div>
