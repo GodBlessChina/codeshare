@@ -42,6 +42,9 @@ Python数据分析
 `第二次上课代码7班 <https://godblesschina.github.io/codeshare/第二次上课代码7班.html>`_
 
 
+`第八次课 <https://godblesschina.github.io/codeshare/第八次课.html>`_
+
+
 `第三次课内容 <https://godblesschina.github.io/codeshare/第三次课内容.html>`_
 
 
