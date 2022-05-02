@@ -30,6 +30,9 @@ Python数据分析
 `第四次上课代码5班 <https://godblesschina.github.io/codeshare/第四次上课代码5班.html>`_
 
 
+`第10次课 时间 <https://godblesschina.github.io/codeshare/第10次课 时间.html>`_
+
+
 `第二次课内容 <https://godblesschina.github.io/codeshare/第二次课内容.html>`_
 
 
@@ -52,6 +55,9 @@ Python数据分析
 
 
 `第三次上课代码7班 <https://godblesschina.github.io/codeshare/第三次上课代码7班.html>`_
+
+
+`第9次课笔记和作业+更新 <https://godblesschina.github.io/codeshare/第9次课笔记和作业+更新.html>`_
 
 
 `第二次上课代码6班 <https://godblesschina.github.io/codeshare/第二次上课代码6班.html>`_
