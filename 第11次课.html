@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第11 12次课tkinter控件</title>
+
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<pre>
+第11次课
+Tkinter 教程 - 介紹
+Tkinter 教程 - Hello World
+Tkinter 教程 - 標籤控制元件
+Tkinter 教程 - 按鈕
+Tkinter 教程 - 多選按鈕
+Tkinter 教程 - 單選按鈕
+Tkinter 教程 - 下拉選單
+Tkinter 教程 - 文字輸入控制元件
+
+第12次课
+Tkinter 教程 - 佈局管理
+Tkinter 教程 - 選單欄
+Tkinter 教程 - 訊息框
+</pre>
+
+
+<pre>
+    <code class="lang-python">
+# 按钮
+from sys import version_info
+if version_info.major == 2:
+    import Tkinter as tk
+elif version_info.major == 3:
+    import tkinter as tk
+
+app = tk.Tk()
+button1 = tk.Button(app, text="Python Label 1")
+button2 = tk.Button(app, text="Python Label 2")
+button1.pack(side=tk.LEFT)
+button2.pack(side=tk.LEFT)
+app.mainloop()
+    </code>
+</pre>
+
+
+
+<pre>
+    <code class="lang-python">
+# Radiobutton
+import tkinter as tk
+
+app = tk.Tk()
+app.geometry('200x100')
+
+radioValue = tk.IntVar()
+
+
+rdioOne = tk.Radiobutton(app, text='January',
+                             variable=radioValue, value=0)
+rdioTwo = tk.Radiobutton(app, text='Febuary',
+                             variable=radioValue, value=1)
+rdioThree = tk.Radiobutton(app, text='March',
+                             variable=radioValue, value=2)
+
+rdioOne.grid(column=0, row=0, sticky="W")
+rdioTwo.grid(column=0, row=1, sticky="W")
+rdioThree.grid(column=0, row=2, sticky="W")
+
+labelValue = tk.Label(app, textvariable=radioValue)
+labelValue.grid(column=2, row=0, sticky="E", padx=40)
+
+app.mainloop()
+    </code>
+</pre>
+
+
+
+<pre>
+    <code class="lang-python">
+# Checkbutton 事件
+import tkinter as tk
+from _cffi_backend import callback
+
+def callBackFunc():
+    print "Oh. I'm clicked"
+
+app = tk.Tk()
+app.geometry('150x100')
+
+chkValue = tk.BooleanVar()
+chkValue.set(True)
+
+chkExample = tk.Checkbutton(app, text='Check Box',
+                            var=chkValue, command=callBackFunc)
+chkExample.grid(column=0, row=0)
+
+app.mainloop()
+
+        ###################################
+
+# Checkbutton 多選按鈕預設值
+import tkinter as tk
+
+app = tk.Tk()
+app.geometry('150x100')
+
+chkValue = tk.StringVar()
+
+chkExample = tk.Checkbutton(app, text='Check Box', var=chkValue,
+                            onvalue="RGB", offvalue="YCbCr")
+chkExample.grid(column=0, row=0)
+
+chkExample.select()
+print "The checkbutton value when selected is {}".format(chkValue.get())
+chkExample.deselect()
+print "The checkbutton value when deselected is {}".format(chkValue.get())
+
+app.mainloop()
+    </code>
+</pre>
+
+
+<pre>
+    <code class="lang-python">
+# 下拉框
+import tkinter as tk
+
+app = tk.Tk()
+app.geometry('200x100')
+
+labelTop = tk.Label(app,
+                    text = "Choose your favourite month")
+labelTop.grid(column=0, row=0)
+
+comboExample = ttk.Combobox(app,
+                            values=[
+                                    "January",
+                                    "February",
+                                    "March",
+                                    "April"])
+pprint(dict(comboExample))
+comboExample.grid(column=0, row=1)
+comboExample.current(1)
+
+print(comboExample.current(), comboExample.get())
+
+app.mainloop()
+    </code>
+</pre>
+</body>
+</html>

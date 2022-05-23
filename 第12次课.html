@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第11 12次课tkinter控件</title>
+
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<pre>
+第11次课
+Tkinter 教程 - 介紹
+Tkinter 教程 - Hello World
+Tkinter 教程 - 標籤控制元件
+Tkinter 教程 - 按鈕
+Tkinter 教程 - 多選按鈕
+Tkinter 教程 - 單選按鈕
+Tkinter 教程 - 下拉選單
+Tkinter 教程 - 文字輸入控制元件
+
+第12次课
+Tkinter 教程 - 佈局管理
+Tkinter 教程 - 選單欄
+Tkinter 教程 - 訊息框
+完成 登录 功能，代码如下
+</pre>
+
+
+<pre>
+    <code class="lang-python">
+"""
+读取配置文件，加载界面的参数，比对账号密码，登录
+作者：软件6班
+时间：2022年5月17日 下午
+"""
+import tkinter as tk
+import configparser # 读取ini文件的包
+import hashlib  # 用于加密的包
+from tkinter import messagebox # 消息框
+
+def is_empty(s:str):  # :str 类似java中中的 is_empty(String s) 旧版本Python不支持这种写法
+    # if s==None or s.strip().__eq__(""):
+    #     return True # 字符串为空
+    # else:
+    #     return False
+    return s==None or s.strip().__eq__("")
+
+def login():
+    print("校验账号密码")
+    # TODO 1 获取用户输入的账号密码 2 判断是否为空 3 如果为空.. 4 如果不为空...
+    input_user = zhanghaoshurukuang.get()
+    input_pwd = mimashurukuang.get() # 用户输入的密码
+    print(input_user, input_pwd)
+    if is_empty(input_user) or is_empty(input_pwd):
+        print("账号密码不能为空")
+        # messagebox.showwarning('傻子吧你', "账号密码不能为空")
+        messagebox.showerror('傻子吧你', "账号密码不能为空")
+        return   # return后面什么都没有，指的是结束函数，没有返回值
+    # TODO 如果代码能走到这里，说明账号密码不为空
+    # 加密用户输入的密码 md5
+    input_pwd = hashlib.md5(input_pwd.encode("utf-8")).hexdigest()
+    # 验证账号密码是否正确
+    # 获取存储的账号密码
+    ini_user = jiexiqi.get('userpwd','user')
+    ini_pwd = jiexiqi.get('userpwd','pwd')
+    print(f"加密以后{input_user} {input_pwd}")
+    print(f"ini中存储的{ini_user} {ini_pwd}")
+    # TODO 校验账号和密码
+    if input_user.__eq__(ini_user) and input_pwd.__eq__(ini_pwd):
+        print("登录成功")
+        messagebox.showinfo("成功", "登录成功")
+    else:
+        print("账号或密码不对")
+        # fanhuizhi = messagebox.askyesno("askyesno","登录失败,检查账号密码") # True False
+        # fanhuizhi = messagebox.askokcancel("askokcancel", "登录失败,检查账号密码") # True False
+        # fanhuizhi = messagebox.askquestion("askquestion", "登录失败,检查账号密码") # yes no
+        # fanhuizhi = messagebox.askretrycancel("askretrycancel", "登录失败,检查账号密码")
+        fanhuizhi = messagebox.askyesnocancel("askyesnocancel", "登录失败,是否退出程序") # True False None
+
+        print(fanhuizhi)
+
+        if fanhuizhi:
+            chuangkou.quit()
+
+# 加载配置文件解析器
+jiexiqi = configparser.ConfigParser()
+jiexiqi.read("conf.ini", encoding='utf-8') # 配置文件的路径
+
+# 主窗口
+chuangkou = tk.Tk()
+
+# 创建一个单独的容器，存放所有的控件
+rongqi = tk.Frame()
+
+# 账号和密码的默认值
+default_user = tk.StringVar() # 相当于字符串类型
+default_pwd = tk.StringVar()
+default_user.set('zhangsan')
+default_pwd.set('123456')
+
+# 控件
+zhanghaobiaoqian = tk.Label(rongqi, text='账号')
+zhanghaoshurukuang = tk.Entry(rongqi, textvariable=default_user)
+mimabiaoqian = tk.Label(rongqi,text="密码")
+mimashurukuang = tk.Entry(rongqi, textvariable=default_pwd,show="*") # 密码框
+dengluanniu = tk.Button(rongqi,text='登录', width=25, command=login)
+
+# 布局
+zhanghaobiaoqian.grid(row=0,column=0)
+zhanghaoshurukuang.grid(row=0,column=1, pady=(10,0))
+mimabiaoqian.grid(row=1,column=0, pady=(10,0))
+mimashurukuang.grid(row=1,column=1, pady=(10,0))
+dengluanniu.grid(row=2,columnspan=2, pady=(10,0))
+
+# 窗口的宽和高
+window_w = int(jiexiqi.get("window","width")) # 界面的宽高
+window_h = int(jiexiqi.get("window","height"))
+sw = chuangkou.winfo_screenwidth() # 屏幕的宽高
+sh = chuangkou.winfo_screenheight()
+x = int(sw/2 - window_w/2)
+y = int(sh/2 - window_h/2)
+chuangkou.geometry(f"{window_w}x{window_h}+{x}+{y}")
+
+# 显示容器
+rongqi.place(relx=0.5, rely=0.5)
+# 容器居中
+rongqi.update() # 将容器刷新一下
+rongqi_w = rongqi.winfo_width() # 容器的宽
+rongqi_h = rongqi.winfo_height() # 容器的高
+print(rongqi_w, rongqi_h)
+rongqi.place(x=-rongqi_w/2, y=-rongqi_h/2)
+
+chuangkou.mainloop()
+    </code>
+</pre>
+
+<pre>
+    配置文件
+    <code class="lang-ini">
+;配置文件 conf.ini
+;配置窗口的参数 宽 高 颜色 字体等等
+[window]
+bg=red
+font=雅黑
+width=500
+height=500
+
+[userpwd]
+user=zhangsan
+pwd=e10adc3949ba59abbe56e057f20f883e
+    </code>
+</pre>
+</body>
+</html>
