@@ -16,8 +16,8 @@ for fname in fnames:
         # Warning: `Watch this <http://www.youtube.com/watch?v=dQw4w9WgXcQ&ob=av3e>`_!
         href = f"""`{href} <https://godblesschina.github.io/codeshare/{fname}>`_"""
         hrefs.append(href)
-findexrstbac = open('source/_index.rst')
-findexrst = open('source/index.rst','w')
+findexrstbac = open('source/_index.rst',encoding='utf-8')
+findexrst = open('source/index.rst','w',encoding='utf-8')
 s = findexrstbac.read()
 content = s.replace('replace','')
 print(content)
