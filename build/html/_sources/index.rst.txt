@@ -9,6 +9,12 @@ Python数据分析
 `14次课pygame <https://godblesschina.github.io/codeshare/14次课pygame.html>`_
 
 
+`gettitle <https://godblesschina.github.io/codeshare/gettitle.html>`_
+
+
+`iframetest <https://godblesschina.github.io/codeshare/iframetest.html>`_
+
+
 `第10次课时间 <https://godblesschina.github.io/codeshare/第10次课时间.html>`_
 
 
@@ -19,6 +25,9 @@ Python数据分析
 
 
 `第13次课 <https://godblesschina.github.io/codeshare/第13次课.html>`_
+
+
+`第15次课获取动态页面内容 <https://godblesschina.github.io/codeshare/第15次课获取动态页面内容.html>`_
 
 
 `第2次上课代码6班 <https://godblesschina.github.io/codeshare/第2次上课代码6班.html>`_
